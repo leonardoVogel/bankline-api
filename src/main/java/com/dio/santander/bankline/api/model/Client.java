@@ -1,10 +1,27 @@
 package com.dio.santander.bankline.api.model;
 
-public class Client {
-	private Integer id;
-	private String cpf;
-	private String nome;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tab_client")
+public class Client {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@Column(length = 14)
+	private String cpf;
+	
+	@Column(length = 60)
+	private String nome;
+	
+	@Embedded
 	private Account account;
 	
 	public Account getAccount() {
