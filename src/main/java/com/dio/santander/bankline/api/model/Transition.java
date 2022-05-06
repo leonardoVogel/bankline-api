@@ -27,6 +27,9 @@ public class Transition {
 	
 	@Enumerated(EnumType.STRING)
 	private TransitionType type;
+	
+	@Column(name = "account_id")
+	private Integer accountId;
 
 	public Integer getId() {
 		return id;
@@ -57,6 +60,12 @@ public class Transition {
 	}
 	public void setType(TransitionType type) {
 		this.type = type;
+	}
+	public Integer getAccountId() {
+		return accountId;
+	}
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
 	}
 	
 	
