@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,11 @@ public class TransitionController {
 	@GetMapping
 	public List<Transition> findAll() {
 		return repository.findAll();
+	}
+	
+	@GetMapping("/{accountId}")
+	public List<Transition> findAll(@PathVariable("accountId") Integer accountId){
+		return repository.findByAccountId(accountId);
 	}
 
 	@PostMapping
