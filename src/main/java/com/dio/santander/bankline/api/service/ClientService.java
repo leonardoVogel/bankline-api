@@ -18,7 +18,7 @@ public class ClientService {
 		Client client = new Client();
 		
 		client.setCpf(newClient.getCpf());
-		client.setNome(newClient.getName());
+		client.setName(newClient.getName());
 		
 		Account account = new Account();
 		account.setBalance(0.0);

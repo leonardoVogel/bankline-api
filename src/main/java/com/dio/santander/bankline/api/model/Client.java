@@ -19,7 +19,7 @@ public class Client {
 	private String cpf;
 	
 	@Column(length = 60)
-	private String nome;
+	private String name;
 	
 	@Embedded
 	private Account account;
@@ -43,11 +43,11 @@ public class Client {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	
